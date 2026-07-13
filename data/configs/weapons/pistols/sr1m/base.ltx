@@ -31,10 +31,10 @@ ammo_in_chamber = true
 def_hide_bones = sight, picatinia, laser, flash, barrel_silencer, barrel_compensator
 def_show_bones = barrel
 ;----TTX--------------------------------------------------------------------------
-hit_power           			= 1.0, 1.0, 1.0, 1.0
+hit_power           			= 0.9
 hit_impulse	 		 			= 75
 hit_type 						= fire_wound
-fire_distance           	= 200
+fire_distance           	= 150
 bullet_speed		 		= 225
 rpm                     	= 300
 rpm_empty_click 	 		= 120
@@ -58,9 +58,9 @@ misfire_start_prob	     	= 0.05
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= 0.15
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0028
+condition_shot_dec      	= 0.0006
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0028
+condition_queue_shot_dec	= 0.0008
 
 ;////////////////////////////////////////////Осечки////////////////////////////////////////////////////////////
 ;Это - разновидность задержки => происходит только в указанных для задержек пределах

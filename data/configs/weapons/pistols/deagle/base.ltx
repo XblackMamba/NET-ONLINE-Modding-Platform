@@ -30,13 +30,13 @@ safe_mode_offset = 0.138000,-0.450000,0.196000
 safe_mode_rot = -0.950000,0.000000,-0.000000
 ;--TTX----------------------------------------------------------------------------
 
-hit_power           	= 1.1, 1.1, 1.1, 1.1
+hit_power           	= 0.85
 hit_impulse	 		 	= 75
 hit_type 				= fire_wound
-fire_distance           = 200
+fire_distance           = 100
 bullet_speed		 	= 275
-rpm                     = 130
-rpm_empty_click 	 	= 120
+rpm                     = 150
+rpm_empty_click 	 	= 150
 
 use_aim_bullet					= false		;Поддерживается ли первая суппер пуля
 time_to_aim						= 1.0
@@ -53,9 +53,9 @@ misfire_start_prob	     	= 0.01
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= 0.2
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0055
+condition_shot_dec      	= 0.0002
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0055
+condition_queue_shot_dec	= 0.0005
 
 ;////////////////////////////////////////////Осечки////////////////////////////////////////////////////////////
 ;Это - разновидность задержки => происходит только в указанных для задержек пределах

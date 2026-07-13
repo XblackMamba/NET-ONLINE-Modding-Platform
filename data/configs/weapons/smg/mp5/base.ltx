@@ -29,12 +29,12 @@ upgrade_scheme = upgrade_scheme_mp5
 safe_mode_offset = 0.388000,0.005000,0.236000
 safe_mode_rot = 0.150000,-1.150000,0.050000
 ;----TTX--------------------------------------------------------------------------
-hit_power            = 0.8, 0.8, 0.8, 0.8
+hit_power            = 0.87
 hit_impulse          = 100    ; size of physic impulse by bullet
 hit_type             = fire_wound            ; [] type of the wound
-fire_distance           = 200                  ; maximum fire distance that bullet can fly
+fire_distance           = 150                  ; maximum fire distance that bullet can fly
 bullet_speed            = 270                ; starting bullet speed
-rpm                     = 700
+rpm                     = 800
 rpm_empty_click         = 200
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
@@ -52,9 +52,9 @@ misfire_start_prob	     	= 0.004
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= 0.057
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0012
+condition_shot_dec      	= 0.0005
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0014
+condition_queue_shot_dec	= 0.0010
 
 ammo_in_chamber = true
 

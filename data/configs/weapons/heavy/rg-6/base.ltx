@@ -7,13 +7,12 @@ $prefetch 		 			= 2
 scheduled               = off    				; option for ALife Simulator
 cform                   = skeleton
 class                   = WP_RG6
-description				= gunsl_wpn_rg6_unoff_descr
+description				= gunsl_wpn_rg6_descr
 
 ef_main_weapon_type		= 4
 ef_weapon_type			= 12
 
 repair_group = rg6
-ammo_in_chamber = false
 
 ;-------------------------------------------------------------------------------
 cost						= 20000
@@ -25,11 +24,11 @@ hit_power        			= 1.0, 1.0, 1.0, 1.0
 hit_impulse      			= 150
 hit_type 					= fire_wound
 fire_distance       		= 100
-bullet_speed				= 50 ;76
-rpm                 		= 120
+bullet_speed				= 32 ;76
+rpm                 		= 100
 rpm_empty_click 	   	= 200
 
-hud                     = wpn_rg6_unoff_hud
+hud                     = wpn_rg-6_hud
 
 misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
 ;изношенность, при которой появляется шанс осечки
@@ -37,13 +36,13 @@ misfire_start_condition		= 0.6
 ;изношеность при которой шанс осечки становится константным
 misfire_end_condition		= 0.1
 ;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0
+misfire_start_prob	     	= 0.001
 ;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0
+misfire_end_prob	     	= 0.02
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.01
+condition_shot_dec      	= 0.00001
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.01
+condition_queue_shot_dec	= 0.00002
 
 tri_state_reload			= on
 
@@ -52,8 +51,8 @@ ammo_current		 		= 10
 ammo_elapsed		 		= 0
 
 ammo_mag_size		 		= 6
-ammo_class		 			= ammo_vog-25, ammo_vog-25p
-launch_speed				= 50
+ammo_class		 			= ammo_vog-25
+launch_speed				= 32 ;76
 sprint_allowed				= true
 
 ;------дисперсия------------------------------------------------------------------------
@@ -112,19 +111,17 @@ slot 					= 2
 animation_slot			= 10
 
 
-inv_name				= gunsl_wpn_rg6_unoff
-inv_name_short			= gunsl_wpn_rg6_unoff
+inv_name				= gunsl_wpn_rg6
+inv_name_short			= gunsl_wpn_rg6
+inv_grid_width			= 4
+inv_grid_height			= 2
+inv_grid_x				= 0
+inv_grid_y				= 8
 
-
-inv_grid_width     = 4
-inv_grid_height    = 2
-inv_grid_x         = 0
-inv_grid_y         = 8
-
-upgr_icon_x = 1300
-upgr_icon_y = 850
-upgr_icon_width = 250
-upgr_icon_height = 150
+upgr_icon_x			= 596
+upgr_icon_y			= 831
+upgr_icon_width		= 290
+upgr_icon_height   	= 141
 
 kill_msg_x				= 0
 kill_msg_y				= 172
@@ -143,7 +140,7 @@ strap_bone0					= bip01_spine2
 strap_bone1					= bip01_spine1
 
 startup_ammo            = 0
-visual                  = dynamics\weapons\wpn_rg6\wpn_rg6_unoff.ogf
+visual                  = dynamics\weapons\wpn_rg6\wpn_rg6.ogf
 
 light_color		 			= 0.6,0.5,0.3
 light_range		 			= 6.0
@@ -163,32 +160,17 @@ zoom_enabled				= true
 scope_zoom_factor	        = 1.02
 
 ;звуки
-snd_draw		= weapons\ak74\ak74_draw
-snd_holster		= weapons\rg6_unoff\rg6_unoff_holster
-snd_shoot		= weapons\ak74\ak74_gl_shoot
-snd_empty	        = weapons\rg6_unoff\rg6_unoff_empty
-snd_reload	        = $silent
-snd_shoot_duplet	= weapons\ak74\ak74_gl_shoot
-snd_open_weapon		= weapons\rg6_unoff\rg6_unoff_open
-snd_open_weapon_empty = weapons\rg6_unoff\rg6_unoff_open
-snd_add_cartridge	= weapons\rg6_unoff\rg6_unoff_reload
-snd_add_cartridge_empty = weapons\rg6_unoff\rg6_unoff_reload
-snd_close_weapon	= weapons\rg6_unoff\rg6_unoff_close
-snd_close_weapon_empty = weapons\rg6_unoff\rg6_unoff_close
-snd_shoot_1	        = weapons\ak74\ak74_gl_shoot
-snd_reload_1		= $silent
-snd_changecartridgetype = $silent
-snd_jamned              = weapons\rg6_unoff\rg6_unoff_empty
-snd_jamned_last         = weapons\rg6_unoff\rg6_unoff_empty
-snd_breechblock = weapons\rg6_unoff\rg6_unoff_rotate
-
-snd_aim_start           = weapons\vss\vss_aim_start
-snd_aim_end             = weapons\vss\vss_aim_end
-snd_sprint_start        = weapons\detector_prepare
-snd_sprint_end          = weapons\pistol_sprint_end
-snd_suicide	        = weapons\suicide_start
-snd_stop_suicide	= weapons\suicide_end
-snd_headlamp_on         = weapons\headflash_on
-snd_headlamp_off        = weapons\headflash_off
-snd_nv_on               = weapons\nv_act
-snd_nv_off              = weapons\nv_deact
+snd_draw		= weapons\generic_draw
+snd_holster		= weapons\generic_holster
+snd_shoot		= weapons\n_toz34_shot
+snd_empty	        = weapons\generic_empty
+snd_reload	        = weapons\rg6_reload
+snd_shoot_duplet	= weapons\n_toz34_shot
+snd_open_weapon		= weapons\rg6_reload_start
+snd_add_cartridge	= weapons\rg6_reload
+snd_close_weapon	= weapons\rg6_reload_end
+snd_shoot_1	        = weapons\n_toz34_shot
+snd_reload_1		= weapons\bm16_reload_one		;reload left
+snd_changecartridgetype = weapons\pm\pm_reload_full
+snd_jamned              = weapons\groza_reload, 0.7
+snd_jamned_last         = weapons\groza_reload, 0.7

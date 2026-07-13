@@ -35,12 +35,12 @@ upgrade_scheme          = upgrade_scheme_p90
 
 singleshoots_time_delta  = 0.1                                ;Скорострельность для одиночных выстрелов
 ;----TTX--------------------------------------------------------------------------
-hit_power            = 0.8, 0.8, 0.8, 0.8
+hit_power            = 0.9, 0.9, 0.9, 0.9
 hit_impulse          = 100    ; size of physic impulse by bullet
 hit_type             = fire_wound            ; [] type of the wound
-fire_distance           = 200                  ; maximum fire distance that bullet can fly
+fire_distance           = 180                 ; maximum fire distance that bullet can fly
 bullet_speed            = 270                ; starting bullet speed
-rpm                     = 700
+rpm                     = 900
 rpm_empty_click         = 200
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
@@ -58,9 +58,9 @@ misfire_start_prob	     	= 0.004
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= 0.057
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0012
+condition_shot_dec      	= 0.0005
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0014
+condition_queue_shot_dec	= 0.0010
 
 ammo_in_chamber = true
 
@@ -85,15 +85,15 @@ control_inertion_factor    = 1.2f
 crosshair_inertion			= 6.30
 
 ;отдача
-cam_return 				= 0
-cam_relax_speed         = 5    		;скорость возврата в исходное положение
-cam_relax_speed_ai     	= 120.75
-cam_dispersion          = 0.6 		;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc      = 0.15 		;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac     = 0.85 		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle           = 80.0		;максимальный угол отдачи
-cam_max_angle_horz      = 50.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.2 		;(degree) size of step camera moved in horizontal position while shooting
+cam_return				= 0
+cam_relax_speed         = 5		; скорость возврата в исходное положение
+cam_relax_speed_ai      = 360	; скорость возврата в исходное положение для AI
+cam_dispersion          = 0.4       ; увеличения угла (в градусах) при первом выстреле
+cam_dispersion_inc      = 0.25       ; увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
+cam_max_angle           = 50.0       ; максимальный угол отдачи
+cam_max_angle_horz      = 50.0       ; (degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.5
 PDM_disp_vel_factor 		= 1.9
@@ -103,12 +103,12 @@ PDM_disp_crouch_no_acc 		= 1.0
 
 zoom_cam_relax_speed         = 5     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 0.3
-zoom_cam_dispersion_inc      = 0.15
-zoom_cam_dispersion_frac     = 0.95
+zoom_cam_dispersion          = 0.25
+zoom_cam_dispersion_inc      = 0.1
+zoom_cam_dispersion_frac     = 0.8
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 1.0
+zoom_cam_step_angle_horz     = 1.1
 
 safe_mode_offset = 0.268000,0.015000,0.086000
 safe_mode_rot = 0.150000,-0.900000,0.050000
